@@ -12,7 +12,7 @@ var fs   = require('fs'),
 	util = require('util'),
 	ugjs = require('uglify-js'),
 	csso = require('csso');
-
+var dstDir="./build";
 var dirmode = 0755,
 	src = __dirname,
 	version = null,
@@ -95,6 +95,7 @@ function copyFile(from, to, overwrite) {
 	}
 	console.log('\t' + from);
 	var srcs = fs.createReadStream(from);
+
 	var dsts = fs.createWriteStream(to);
 	return util.pump(srcs, dsts);
 }
@@ -194,7 +195,7 @@ file({'js/elfinder.full.js': files['elfinder.full.js']}, function(){
 
 desc('uglify elfinder.min.js');
 file({'js/elfinder.min.js': ['js/elfinder.full.js']}, function () {
-	console.log('uglify elfinder.min.js');
+	console.log('zzz uglify elfinder.min.js');
 	var result;
 	if (typeof ugjs.minify == 'undefined') {
 		var ugp  = ugjs.parser;
@@ -206,6 +207,8 @@ file({'js/elfinder.min.js': ['js/elfinder.full.js']}, function () {
 	} else {
 		result = ugjs.minify('js/elfinder.full.js').code;
 	}
+
+
 	fs.writeFileSync(this.name, getComment() + result);
 });
 
@@ -222,6 +225,7 @@ task('misc', function(){
 	for (i in cf)
 	{
 		var dst = cf[i].replace(src, '').substr(1);
+		console.log(dst);
 		copyFile(cf[i], dst);
 	}
 	// elfinder.html
@@ -313,3 +317,6 @@ task({'release': ['version']}, function(){
 	});
 	prePack.invoke();
 }, {async: true});
+watchTask(['elfinder'], function () {
+ 
+});

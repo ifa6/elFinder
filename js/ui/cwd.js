@@ -7,7 +7,7 @@
 $.fn.elfindercwd = function(fm, options) {
 	
 	this.not('.elfinder-cwd').each(function() {
-		// fm.time('cwdLoad');
+		// fm.time('cwdLoad'); test
 		
 		var 
 			list = fm.viewType == 'list',
