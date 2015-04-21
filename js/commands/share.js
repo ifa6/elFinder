@@ -151,25 +151,11 @@
                             $('#cplinkurl').val(sharelink);
                             if(shtype=='m')
                             {
-                               // $('#cplinkurl').val(sharelink);
-                                //$.get('http://s.88snow.com/index.php?u='+encodeURIComponent(sharelink), function(data) {
-                                //    if(data.indexOf('http://')!=-1)
-                                //    {
-                                //
-                                //        var sharelink="http://"+location.hostname+'/'+base+'cmd=file&target=' + files[0].hash+'&download=1';
-                                //        $.get(sharelink.replace(/cmd=file/i,'cmd=share'),function(data){});
-                                //    }
-                                //});
+                               
                             }
                             else if(shtype="d")
                             {
-                                //分享类型是dropbox
-                                //$.getJSON('home.php?mod=space&do=storage&go=conn&cmd=share&target='+files[0].hash+'&init=1&tree=1&_='+(new Date().getTime()),function(data) {
-                                //    if(data!=null && data!="")
-                                //    {
-                                //        $('#cplinkurl').val(data.url);
-                                //    }
-                                //});
+                               
                             }
                             doCopy();
                             //$.get(sharelink.replace(/cmd=file/i,'cmd=share'),function(data){});
