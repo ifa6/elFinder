@@ -70,7 +70,7 @@
 
 
 
-           copyLink = function() {
+           function  copyLink() {
                 // help tab
                 html.push('<div id="copylink" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="text-align:center">');
                 var createlink='';
